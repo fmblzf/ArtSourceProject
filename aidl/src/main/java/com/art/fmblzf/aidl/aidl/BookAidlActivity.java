@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -29,6 +30,8 @@ public class BookAidlActivity extends AppCompatActivity {
 
     private IBookManager iBookManager;
 
+    private Intent aidlService;
+
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -44,9 +47,15 @@ public class BookAidlActivity extends AppCompatActivity {
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.i(TAG,"onServiceConnected " +name.toString());
             iBookManager = IBookManager.Stub.asInterface(service);
             try {
                 iBookManager.registerListener(mIOnNewBookArrivedListener);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            try {
+                service.linkToDeath(deathRecipient,0);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -70,6 +79,25 @@ public class BookAidlActivity extends AppCompatActivity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             iBookManager = null;
+            Log.i(TAG,"onServiceDisconnected  "+name.toString());
+            //bindService(aidlService,serviceConnection,Context.BIND_AUTO_CREATE);
+        }
+    };
+    /**
+     *
+     * 监听服务；
+     * 如果意外断开就会触发监听方法binderDied
+     * 此时可以重新绑定服务
+     * 两种方式，这是一种；
+     * 还有一种是在onServiceDisconnected上实现重启
+     *
+     */
+    private IBinder.DeathRecipient deathRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            Log.i(TAG,"binderDied");
+            //服务断开时，触发该事件方法，重新连接服务
+            bindService(aidlService,serviceConnection,Context.BIND_AUTO_CREATE);
         }
     };
 
@@ -100,7 +128,8 @@ public class BookAidlActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bindService(new Intent(this,BookServiceAigl.class),serviceConnection, Context.BIND_AUTO_CREATE);
+        aidlService = new Intent(this,BookServiceAigl.class);
+        bindService(aidlService,serviceConnection, Context.BIND_AUTO_CREATE);
     }
 
     @Override

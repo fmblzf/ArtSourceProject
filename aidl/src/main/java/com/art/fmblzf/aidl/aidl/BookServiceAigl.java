@@ -3,8 +3,11 @@ package com.art.fmblzf.aidl.aidl;
 import android.annotation.TargetApi;
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.SystemClock;
@@ -56,6 +59,19 @@ public class BookServiceAigl extends Service {
     private IBinder mBinder = new IBookManager.Stub(){
 
         @Override
+        public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
+            //可以加上权限控制
+            //根据调用者的包名进行权限调用
+            String packageName = null;
+            String[] packages = getPackageManager().getPackagesForUid(getCallingUid());
+            if (packages != null && packages.length>0){
+                packageName = packages[0];
+            }
+            Log.i(TAG,"packageName="+packageName+";Uid="+getCallingUid()+";Pid="+getCallingPid());
+            return super.onTransact(code, data, reply, flags);
+        }
+
+        @Override
         public List<Book> getBookList() throws RemoteException {
             //IBinder会按照List接口的规范去访问CopyOnWriteArrayList，最终生成一个新的ArrayList传给客户端
             //所以在跨进程访问中可以使用CopyOnWriteArrayList，同理还有ConCurrentHashMap最终生成HashMap传给客户端
@@ -105,7 +121,7 @@ public class BookServiceAigl extends Service {
         super.onCreate();
         bookList.add(new Book(1, "android"));
         bookList.add(new Book(2, "IOS"));
-        //new Thread(new WorkService()).start();
+        new Thread(new WorkService()).start();
     }
 
     @Override
@@ -158,6 +174,20 @@ public class BookServiceAigl extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        if (!checkPermission()){
+            Log.e(TAG,"uses-permission not find , onBind fail!");
+            return null;
+        }
         return mBinder;
     }
+
+    private boolean checkPermission(){
+        int checkIndex = checkCallingOrSelfPermission("com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE");
+        if (PackageManager.PERMISSION_DENIED == checkIndex){
+            return false;
+        }
+
+        return true;
+    }
+
 }

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.art.fmblzf.aidl">
+    
+    <!--自定义权限,先创建，后面的组件需要直接调用自定义权限的name即可-->
+    <permission
+        android:name="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE"
+        android:label="@string/app_name"
+        android:permissionGroup="@string/app_name"
+        android:protectionLevel="normal">
+    </permission>
 
     <application
         android:allowBackup="true"
@@ -35,9 +43,11 @@
             android:process=":remote"></service>
 
         <service android:name=".aidl.BookServiceAigl"
+            android:permission="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE"
             android:process=":book"></service>
 
-
     </application>
+    
+    <uses-permission android:name="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE" />
 
 </manifest>
