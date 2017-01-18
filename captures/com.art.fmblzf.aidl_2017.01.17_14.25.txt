@@ -1,0 +1,24 @@
+TASK com.art.fmblzf.aidl id=100
+  ACTIVITY com.art.fmblzf.aidl/.aidl.BookAidlActivity 41971e00 pid=11796
+    Local FragmentActivity 41985480 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@41986398
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@41986398
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{4199b428 V.E..... ... 0,0-720,1280}
+        android.widget.LinearLayout{4199bcd0 V.E..... ... 0,0-720,1280}
+          android.view.ViewStub{419a3188 G.E..... ... 0,0-0,0 #102031e}
+          android.widget.FrameLayout{419a35b8 V.E..... ... 0,50-720,1280}
+            android.support.v7.widget.ActionBarOverlayLayout{41996ed0 V.ED.... ... 0,0-720,1230 #7f0c003f app:id/decor_content_parent}
+              android.support.v7.widget.ContentFrameLayout{419a3fb8 V.ED.... ... 0,112-720,1230 #1020002 android:id/content}
+                android.widget.RelativeLayout{419c3000 V.E..... ... 0,0-720,1118}
+                  android.support.v7.widget.AppCompatTextView{419c3b50 V.ED.... ... 32,32-185,70 #7f0c0050 app:id/textView}
+                  android.support.v7.widget.AppCompatButton{419c6888 VFED..C. ... 32,128-688,224 #7f0c0051 app:id/button}
+              android.support.v7.widget.ActionBarContainer{419a4b48 V.ED.... ... 0,0-720,112 #7f0c0040 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{419a61c8 V.E..... ... 0,0-720,112 #7f0c0041 app:id/action_bar}
+                  android.widget.TextView{419c0580 V.ED.... ... 32,29-101,83}
+                  android.support.v7.widget.ActionMenuView{419e4520 V.E..... ... 720,0-720,112}
+                android.support.v7.widget.ActionBarContextView{419b8ca8 G.E..... ... 0,0-0,0 #7f0c0042 app:id/action_context_bar}

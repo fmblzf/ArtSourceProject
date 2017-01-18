@@ -9,6 +9,12 @@
         android:permissionGroup="@string/app_name"
         android:protectionLevel="normal">
     </permission>
+    <permission
+        android:name="com.art.fmblzf.aidl.permission.PROVIDER"
+        android:label="@string/app_name"
+        android:permissionGroup="@string/app_name"
+        android:protectionLevel="normal">
+    </permission>
 
     <application
         android:allowBackup="true"
@@ -35,6 +41,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category._LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".provider.BookProviderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,6 +59,14 @@
         <service android:name=".aidl.BookServiceAigl"
             android:permission="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE"
             android:process=":book"></service>
+
+        <provider
+            android:authorities="com.art.fmblzf.aidl.provider.book.provider"
+            android:name="com.art.fmblzf.aidl.provider.BookProvider"
+            android:process=":provider"
+            android:permission="com.art.fmblzf.aidl.permission.PROVIDER"
+            android:exported="true">
+        </provider>
 
     </application>
     

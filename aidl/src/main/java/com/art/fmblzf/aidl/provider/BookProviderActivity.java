@@ -1,25 +1,30 @@
-package com.art.fmblzf.artsourceproject;
+package com.art.fmblzf.aidl.provider;
 
-import android.content.ComponentName;
 import android.content.ContentValues;
-import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import module.Book;
-import module.User;
+import com.art.fmblzf.aidl.R;
+import com.art.fmblzf.aidl.module.Book;
+import com.art.fmblzf.aidl.module.User;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by Administrator on 2017/1/18.
+ */
+public class BookProviderActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "BookProviderActivity";
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //"com.art.fmblzf.aidl.provider.book.provider" 是对应Provider的android:authorities属性值
         Uri uri = Uri.parse("content://com.art.fmblzf.aidl.provider.book.provider/book");
         ContentValues values = new ContentValues();
         values.put("_id",6);
@@ -45,23 +50,4 @@ public class MainActivity extends AppCompatActivity {
         }
         userCursor.close();
     }
-
-    @Override
-    protected void onDestroy() {
-//        unbindService(serviceConnection);
-        super.onDestroy();
-    }
-
-    private ServiceConnection serviceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-
-        }
-
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-
-        }
-    };
-
 }
