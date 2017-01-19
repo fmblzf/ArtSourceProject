@@ -182,10 +182,10 @@ public class BookServiceAigl extends Service {
     }
 
     private boolean checkPermission(){
-        int checkIndex = checkCallingOrSelfPermission("com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE");
-        if (PackageManager.PERMISSION_DENIED == checkIndex){
-            return false;
-        }
+//        int checkIndex = checkCallingOrSelfPermission("com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE");
+//        if (PackageManager.PERMISSION_DENIED == checkIndex){
+//            return false;
+//        }
 
         return true;
     }

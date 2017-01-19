@@ -41,7 +41,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category._LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -49,7 +49,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -58,7 +58,12 @@
 
         <service android:name=".aidl.BookServiceAigl"
             android:permission="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE"
-            android:process=":book"></service>
+            android:process=":book"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACCESS_BOOK_SERVICE"></action>
+            </intent-filter>
+        </service>
 
         <provider
             android:authorities="com.art.fmblzf.aidl.provider.book.provider"
@@ -69,7 +74,4 @@
         </provider>
 
     </application>
-    
-    <uses-permission android:name="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE" />
-
 </manifest>

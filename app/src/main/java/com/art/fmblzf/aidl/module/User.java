@@ -1,4 +1,4 @@
-package module;
+package com.art.fmblzf.aidl.module;
 
 import android.os.Parcel;
 import android.os.Parcelable;

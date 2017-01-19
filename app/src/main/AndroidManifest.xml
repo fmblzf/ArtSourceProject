@@ -16,5 +16,6 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="com.art.fmblzf.aidl.permission.ACCESS_BOOK_SERVICE" />
     <uses-permission android:name="com.art.fmblzf.aidl.permission.PROVIDER" />
 </manifest>
