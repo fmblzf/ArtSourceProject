@@ -19,4 +19,7 @@ public class BinderService extends Service {
     public IBinder onBind(Intent intent) {
         return mBinder;
     }
+
+
+
 }

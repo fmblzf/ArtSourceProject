@@ -5,4 +5,5 @@ package com.art.fmblzf.aidl.binderpool;
 
 interface IBinderPool {
     IBinder queryBinder(int binderCode);
+    IBinder queryBinderByClass(in String className);
 }

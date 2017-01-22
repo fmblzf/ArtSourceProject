@@ -62,6 +62,15 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category._LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".binderpool.BinderPoolActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -78,6 +87,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.ACCESS_BOOK_SERVICE"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name=".binderpool.BinderService"
+            android:permission="com.art.fmblzf.aidl.permission.ACCESS_BINDER_POOL"
+            android:process=":binderpool"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACCESS_BINDER_POOL"></action>
             </intent-filter>
         </service>
 

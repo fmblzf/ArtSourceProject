@@ -10,6 +10,6 @@ import com.art.fmblzf.aidl.binderpool.ICompute;
 public class IComputeImpl extends ICompute.Stub {
     @Override
     public int add(int a, int b) throws RemoteException {
-        return 0;
+        return a+b;
     }
 }
