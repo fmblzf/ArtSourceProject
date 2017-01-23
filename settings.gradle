@@ -1,1 +1,3 @@
 include ':app', ':aidl', ':view'
+include ':library'
+include ':sample'
