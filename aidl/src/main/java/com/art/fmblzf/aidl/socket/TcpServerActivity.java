@@ -119,7 +119,7 @@ public class TcpServerActivity extends AppCompatActivity implements View.OnClick
         tv.setText(message);
         if (location == "right"){
             tv.setGravity(Gravity.RIGHT);
-            tv.setTextColor(getResources().getColor(R.color.colorAccent));
+//            tv.setTextColor(getResources().getColor(R.color.colorAccent));
         }
         return tv;
     }
