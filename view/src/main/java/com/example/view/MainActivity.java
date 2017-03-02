@@ -30,29 +30,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //初始化控件
-        initView();
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-    private void initView() {
-        mHorizontalScrollViewEx = (HorizontalScrollViewEx) this.findViewById(R.id.horizon_scroll_id);
-        mLayoutInflater = LayoutInflater.from(this);
-        DisplayMetrics outerMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getRealMetrics(outerMetrics);
-        int sreenH = outerMetrics.heightPixels;
-        int sreenW = outerMetrics.widthPixels;
-        for (int i = 0;i<3;i++) {
-            ViewGroup layout = (ViewGroup) mLayoutInflater.inflate(R.layout.content_layout, mHorizontalScrollViewEx.getContainer(), false);
-            layout.getLayoutParams().width = sreenW;
-            layout.getLayoutParams().height = sreenH;
-            layout.setBackgroundColor(Color.argb(1,225/(i+1),225/(i+1),225/(i+1)));
-            TextView textView = (TextView) layout.findViewById(R.id.content_title);
-            textView.setText("page:"+(i+1));
-            createList(layout);
-            mHorizontalScrollViewEx.addSubView(layout);
-        }
-    }
 
     /**
      * 创建ListView

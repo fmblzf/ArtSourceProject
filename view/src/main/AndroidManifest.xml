@@ -15,12 +15,18 @@
                 <category android:name="android.intent.category.LAUNCHER_" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ScrollerActivity"></activity>
-        <activity android:name=".activity.CircleViewActivity">
+        <activity android:name=".activity.ScrollerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.CircleViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER_" />
             </intent-filter>
         </activity>
     </application>

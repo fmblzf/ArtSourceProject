@@ -3,4 +3,7 @@
     <declare-styleable name="CircleView">
         <attr name="circle_color" format="color"></attr>
     </declare-styleable>
+    <declare-styleable name="HorizontalScrollViewEx">
+        <attr name="font_color" format="color"></attr>
+    </declare-styleable>
 </resources>
