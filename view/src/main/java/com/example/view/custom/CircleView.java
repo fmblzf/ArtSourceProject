@@ -92,4 +92,22 @@ public class CircleView extends View {
         }
         canvas.drawCircle(width/2,height/2,radius,mPaint);
     }
+
+    /**
+     * 当包含此View的Activity启动时，该方法会被调用
+     * 可以做些逻辑处理，比如启动线程或者动画
+     */
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
+    /**
+     * 当包含该View的Activity退出，或者该View被remove时，也会触发该方法
+     * 可以关闭线程或者动画
+     */
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+    }
 }

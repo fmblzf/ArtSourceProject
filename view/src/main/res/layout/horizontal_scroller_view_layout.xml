@@ -8,9 +8,11 @@
         android:layout_height="match_parent"
         >
         <LinearLayout
+            android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+            android:background="#999000">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,7 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#aef123">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,7 +31,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#a01098">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,7 +41,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#987654">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
