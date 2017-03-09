@@ -16,6 +16,18 @@
             </intent-filter>
         </activity>
         <activity android:name="com.fmblzf.remoteviewmodule.NotificationActivity"></activity>
+        <receiver android:name=".widget.MyAppWidgetProvider">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info">
+            </meta-data>
+
+            <intent-filter>
+                <action android:name="com.fmblzf.remoteviewmodule.widget.CLICK"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>

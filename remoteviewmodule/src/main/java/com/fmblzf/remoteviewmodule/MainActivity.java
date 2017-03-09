@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
      * 通知消息的唯一主键
      */
     private final static int NOTIFICATION_NOTIFY_ID = 10;
+    private final static int NOTIFICATION_NOTIFY_ID_1 = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //创建并显示通知消息
-//        createNotification();
+        createNotification();
         createNotificationByRemoteView();
     }
 
@@ -86,16 +87,24 @@ public class MainActivity extends AppCompatActivity {
         RemoteViews remoteViews = new RemoteViews(getPackageName(),R.layout.remoteview_style_layout);
         remoteViews.setTextViewText(R.id.remote_view_tv_title,"有新版本需要更新");
         remoteViews.setTextViewText(R.id.remote_view_tv_content,"更新内容更新内容更新内容更新内容更新内容");
-        remoteViews.setOnClickPendingIntent(R.id.rl,pendingIntent);
+//        remoteViews.setOnClickPendingIntent(R.id.rl,pendingIntent);
 //        builder.setCustomContentView(remoteViews);
 
-        Notification notification = builder.build();
+        //创建Notification
+        Notification notification = null;
+        //根据版本获取对应的Notification
+        if (Build.VERSION.SDK_INT>15) {
+            notification = builder.build();
+        }else{
+            notification = builder.getNotification();
+        }
         notification.contentView = remoteViews;
+        notification.contentIntent = pendingIntent;
         notification.flags = Notification.FLAG_AUTO_CANCEL;
-        notification.when = System.currentTimeMillis()+1000;
+//        notification.when = System.currentTimeMillis()+1000;
 
         NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(NOTIFICATION_NOTIFY_ID+3,notification);
+        manager.notify(NOTIFICATION_NOTIFY_ID_1,notification);
         
     }
 
