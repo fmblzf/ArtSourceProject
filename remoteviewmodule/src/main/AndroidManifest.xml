@@ -12,10 +12,27 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category._LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name="com.fmblzf.remoteviewmodule.NotificationActivity"></activity>
+
+        <activity
+            android:name=".remote.ARemoteActivity"
+            android:process=":A">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".remote.BRemoteActivity"
+            android:process=":B">
+        </activity>
+
+
         <receiver android:name=".widget.MyAppWidgetProvider">
             <meta-data
                 android:name="android.appwidget.provider"

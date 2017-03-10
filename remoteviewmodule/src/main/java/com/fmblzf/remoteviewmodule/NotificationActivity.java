@@ -17,7 +17,9 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.notification_jump_layout);
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("NOTIFICATION");
-        String name = bundle.getString("STRING");
-        Toast.makeText(this,name,Toast.LENGTH_SHORT).show();
+        if (bundle != null) {
+            String name = bundle.getString("STRING");
+            Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
+        }
     }
 }
