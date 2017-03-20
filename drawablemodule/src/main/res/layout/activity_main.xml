@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.fmblzf.drawablemodule.MainActivity">
+    android:background="@drawable/nine_patch_drawable_resource">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/shap_drawable_resource"/>
+
+        <!--仿微信输入框样式-->
+        <EditText
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@drawable/layer_list_drawable_resource"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:focusable="true"
+            android:background="@drawable/selector_drawable_resource"
+            android:text="测试"/>
+
+        <ImageView
+            android:id="@+id/level_imageview"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/level_list_drawable_resource"
+            />
+        <TextView
+            android:id="@+id/transition_textview"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/transition_drawable_resource"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/inset_drawable_resource"
+            />
+        <TextView
+            android:id="@+id/scale_textview"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/scale_drawable_resource"
+            />
+        <ImageView
+            android:id="@+id/clip_imageview"
+            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/clip_drawable_resource"
+            />
+        <TextView
+            android:id="@+id/custom_textview"
+            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="测试"
+            />
+    </LinearLayout>
+
+
+</ScrollView>
