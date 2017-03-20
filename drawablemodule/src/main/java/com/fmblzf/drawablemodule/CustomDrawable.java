@@ -29,6 +29,14 @@ public class CustomDrawable extends Drawable {
         canvas.drawCircle(cx,cy,radius,mPaint);
     }
 
+    /**
+     *
+     * getIntrinsicHeight和getIntrinsicWidth这两个方法
+     * 当自定义的Drawable有固定大小时最好重写这两个方法，因为它会影响到View的wrap_content布局，
+     * 比如自定义Drawable是绘制一张图片，那么这个Drawable的内部大小就可以选用图片的大小。
+     *
+     */
+
     @Override
     public int getIntrinsicHeight() {
         return super.getIntrinsicHeight();
