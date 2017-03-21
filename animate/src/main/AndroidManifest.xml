@@ -15,6 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.fmblzf.animate.FrameAnimationActivity"></activity>
+        <activity android:name=".ViewGroupAnimateActivity"></activity>
     </application>
-
 </manifest>

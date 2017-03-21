@@ -1,5 +1,6 @@
 package com.fmblzf.animate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -13,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mButton;
     private Button mAlphaButton ;
     private Button mCustomButton;
+    private Button mFrameButton;
+    private Button mViewGroupAnimateButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         },0L);
 
 
+        mFrameButton = (Button) this.findViewById(R.id.button4);
+        mFrameButton.setOnClickListener(this);
+
+        mViewGroupAnimateButton = (Button) this.findViewById(R.id.button5);
+        mViewGroupAnimateButton.setOnClickListener(this);
 
     }
 
@@ -57,6 +66,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Rotate3dAnimation rotate3dAnimation = new Rotate3dAnimation(0,360,mCustomButton.getWidth()/2,mCustomButton.getHeight()/2,-1000,true);
                 rotate3dAnimation.setDuration(5000);
                 mCustomButton.startAnimation(rotate3dAnimation);
+                break;
+            case R.id.button4:
+                Intent  intent = new Intent(MainActivity.this,FrameAnimationActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.button5:
+                Intent intent1 = new Intent(MainActivity.this,ViewGroupAnimateActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;

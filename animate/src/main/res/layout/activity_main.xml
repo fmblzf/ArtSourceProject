@@ -10,11 +10,13 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="XML动画测试"/>
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="透明度动画测试"/>
     <Button
         android:id="@+id/button3"
@@ -23,4 +25,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="自定义动画"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="帧动画"/>
+    <Button
+        android:id="@+id/button5"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="ViewGroup动画（ListView）"/>
 </LinearLayout>
