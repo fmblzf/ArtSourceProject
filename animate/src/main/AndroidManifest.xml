@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fmblzf.animate">
 
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"
+        ></supports-screens>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,5 +25,7 @@
         </activity>
         <activity android:name="com.fmblzf.animate.FrameAnimationActivity"></activity>
         <activity android:name=".ViewGroupAnimateActivity"></activity>
+        <activity android:name=".SwitchAnimateActivity"></activity>
+        <activity android:name=".SwitchAnimateActivity1"></activity>
     </application>
 </manifest>

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mCustomButton;
     private Button mFrameButton;
     private Button mViewGroupAnimateButton;
+    private Button mSwitchAnimateButton;
 
 
     @Override
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mViewGroupAnimateButton = (Button) this.findViewById(R.id.button5);
         mViewGroupAnimateButton.setOnClickListener(this);
 
+        mSwitchAnimateButton = (Button) this.findViewById(R.id.button6);
+        mSwitchAnimateButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -70,10 +74,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button4:
                 Intent  intent = new Intent(MainActivity.this,FrameAnimationActivity.class);
                 startActivity(intent);
+                MainActivity.this.overridePendingTransition(R.anim.activity_fade_in, R.anim.activity_fade_out);
                 break;
             case R.id.button5:
                 Intent intent1 = new Intent(MainActivity.this,ViewGroupAnimateActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.button6:
+                Intent intent2 = new Intent(MainActivity.this,SwitchAnimateActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;
