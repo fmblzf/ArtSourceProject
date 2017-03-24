@@ -47,4 +47,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="打开Activity切换动画"/>
+    <Button
+        android:id="@+id/button7"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="打开属性动画"/>
 </LinearLayout>

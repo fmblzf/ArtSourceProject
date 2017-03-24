@@ -9,6 +9,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import com.fmblzf.animate.attr.AttrAnimateActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mButton;
@@ -17,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mFrameButton;
     private Button mViewGroupAnimateButton;
     private Button mSwitchAnimateButton;
+    private Button mAttrAnimateButton;
+
 
 
     @Override
@@ -51,6 +55,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSwitchAnimateButton = (Button) this.findViewById(R.id.button6);
         mSwitchAnimateButton.setOnClickListener(this);
 
+        mAttrAnimateButton = (Button) this.findViewById(R.id.button7);
+        mAttrAnimateButton.setOnClickListener(this);
+
     }
 
     @Override
@@ -83,6 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button6:
                 Intent intent2 = new Intent(MainActivity.this,SwitchAnimateActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.button7:
+                Intent intent3 = new Intent(MainActivity.this, AttrAnimateActivity.class);
+                startActivity(intent3);
                 break;
             default:
                 break;

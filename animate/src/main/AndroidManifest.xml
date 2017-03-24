@@ -27,5 +27,8 @@
         <activity android:name=".ViewGroupAnimateActivity"></activity>
         <activity android:name=".SwitchAnimateActivity"></activity>
         <activity android:name=".SwitchAnimateActivity1"></activity>
+        <activity android:name=".attr.AttrAnimateActivity"></activity>
+        <activity android:name=".attr.BackColorAnimateActivity"></activity>
+        <activity android:name=".attr.XMLAttrAnimateActivity"></activity>
     </application>
 </manifest>
