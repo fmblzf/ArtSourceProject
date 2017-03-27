@@ -17,7 +17,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    //<!--多渠道打包-配置信息-->
+    productFlavors{
+        wandoujia{}
+        baidu{}
+        c360{}
+        uc{}
+
+        productFlavors.all{flavor->
+            flavor.manifestPlaceholders=[UMENG_CHANNEL_VALUE:name]
+        }
+    }
+
 }
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
