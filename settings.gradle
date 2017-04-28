@@ -1,1 +1,1 @@
-include ':app', ':aidl', ':view', ':remoteviewmodule', ':drawablemodule', ':animate', ':window', ':autotest', ':network', ':volley'
+include ':app', ':aidl', ':view', ':remoteviewmodule', ':drawablemodule', ':animate', ':window', ':autotest', ':network'
