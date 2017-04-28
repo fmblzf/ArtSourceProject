@@ -1,5 +1,6 @@
 package com.fmblzf.window;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.support.v7.app.AppCompatActivity;
